@@ -1,0 +1,64 @@
+tools:
+  - class_name: "verl.tools.equation_evaluator_tool.EquationEvaluatorTool"
+    config: 
+      sandbox_fusion_urls:
+        - "http://0.0.0.0:8010/run_code"
+        - "http://0.0.0.0:8020/run_code"
+        - "http://0.0.0.0:8030/run_code"
+        - "http://0.0.0.0:8040/run_code"
+        - "http://0.0.0.0:8050/run_code"
+        - "http://0.0.0.0:8060/run_code"
+        - "http://0.0.0.0:8070/run_code"
+        - "http://0.0.0.0:8080/run_code"
+      default_timeout: 30
+      default_language: "python"
+      memory_limit_mb: 1024
+      type: native
+
+    tool_schema:
+      type: "function"
+      function:
+        name: "equation_evaluator"
+        description: "Accepts a mathematical equation as a Python function string, optimizes its parameters to fit a dataset using the BFGS method, and returns performance metrics (MSE, NMSE, MAPE) to evaluate its goodness of fit."
+        parameters:
+          type: "object"
+          properties:
+            equation:
+              type: "string"
+              description: "The equation to evaluate, provided as a complete Python function string."
+          required: ["equation"]
+  
+
+  - class_name: "verl.tools.data_analyzer_tool.DataAnalyzerTool"
+    config: 
+      sandbox_fusion_urls:
+        - "http://0.0.0.0:8010/run_code"
+        - "http://0.0.0.0:8020/run_code"
+        - "http://0.0.0.0:8030/run_code"
+        - "http://0.0.0.0:8040/run_code"
+        - "http://0.0.0.0:8050/run_code"
+        - "http://0.0.0.0:8060/run_code"
+        - "http://0.0.0.0:8070/run_code"
+        - "http://0.0.0.0:8080/run_code"
+      default_timeout: 30
+      default_language: "python"
+      memory_limit_mb: 1024
+      type: native
+
+    tool_schema:
+      type: "function"
+      function:
+        name: "data_analyzer"
+        description: "Executes Python code for data analysis and exploration on a given dataset to inspect for relationships or anomalies. This tool does not support data visualization or plotting libraries like Matplotlib."
+        parameters:
+          type: "object"
+          properties:
+            code:
+              type: "string"
+              description: "The Python code snippet for data analysis to execute."
+          required: ["code"]
+
+
+
+
+
