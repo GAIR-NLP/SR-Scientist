@@ -57,7 +57,7 @@ Recently, Large Language Models (LLMs) have been applied to scientific equation 
     conda activate sandbox-runtime
     
     # Optional: Install poetry if you don't have it
-    # curl -sSL [https://install.python-poetry.org](https://install.python-poetry.org) | python3 -
+    # curl -sSL https://install.python-poetry.org | python3 -
     # export PATH="/root/.local/bin:$PATH"
     
     poetry install
